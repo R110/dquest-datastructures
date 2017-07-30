@@ -206,6 +206,9 @@ class BaseBST():
             result = self.node.right.search(key)
         return result
 
+def main():
+    pass
+
 bst_values = [3, 2, 5, 4, 7, 6, 8]
 #  change to bst_values = [8, 3, 2, 5, 4, 7, 6]
 # File .. in insert_multiple
@@ -217,14 +220,15 @@ bst_values = [3, 2, 5, 4, 7, 6, 8]
 bst_list_values = [['hello', 'world', 3], ['goodbye', 'world', 2], ['foo', 'bar', 5],
 ['fizz', 'buzz', 4], ['lorem', 'ipsum', 7], ['this', 'that', 6],
 ['enough', 'programming', 8]]
-#
-bst = BaseBST()
-bst.insert_multiple(bst_values)
-print(bst.node.value)
-inorder = bst.inorder(bst)
-print(inorder)
 
-bst_list = BaseBST(index=2)
-bst_list.insert_multiple(bst_list_values)
-inorder_list = bst_list.inorder(bst_list)
-print(bst_list.node.value, '\n', inorder_list)
+if __name__ == "__main__":
+    bst = BaseBST()
+    bst.insert_multiple(bst_values)
+    print(bst.node.value)
+    inorder = bst.inorder(bst)
+    print(inorder)
+#
+# bst_list = BaseBST(index=2)
+# bst_list.insert_multiple(bst_list_values)
+# inorder_list = bst_list.inorder(bst_list)
+# print(bst_list.node.value, '\n', inorder_list)
