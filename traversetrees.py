@@ -44,9 +44,9 @@ class BinaryTree(BaseBinaryTree):
             return []
         #print(node.value) 2x
         return (
-            self.preorder_traverse(node.left) +
+            self.inorder_traverse(node.left) +
             [node.value] +
-            self.preorder_traverse(node.right)
+            self.inorder_traverse(node.right)
         )
 
     def postorder_traverse(self, node):
@@ -59,17 +59,14 @@ class BinaryTree(BaseBinaryTree):
         )
 
 
-#
-# #[2, 4, 8, 9, 5, 10, 1, 3, 6, 7]
-# Initial(1) inorder -> (2) + 1 + (3)
-# **pre-order recursive calls (Left)
-# 2 -> 2 + (4) + (5)
-# 4 -> 4 + (8) + (9)
-# 8 -> 8 + [] + []...
-#
+
+
 # #[1, 2, 4, 8, 9, 5, 10, 3, 6, 7]
 # Initial(1) preorder -> (2) + 1 + (3)
 # To dictate --> 4 (node), 8, 9 --> base case returns empty list
+# 2 -> 2 + (4) + (5)
+# 4 -> 4 + (8) + (9)
+# 8 -> 8 + [] + []...
 #
 # #[8, 9, 4, 10, 5, 2, 6, 7, 3, 1]
 # Initial(1) postorder -> (2) + (3) + 1
@@ -99,4 +96,4 @@ tree = BinaryTree(level_order)
 preorder = tree.preorder_traverse(tree.root)
 inorder = tree.inorder_traverse(tree.root)
 postorder = tree.postorder_traverse(tree.root)
-print(preorder, inorder, postorder)
+print(preorder,'\n', inorder, '\n', postorder)
